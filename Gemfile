@@ -13,6 +13,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+
+  gem 'capybara', '2.15.1'
+	gem 'rspec-rails', '3.6.1'
+	gem 'selenium-webdriver', '2.53.0'
 end
 
 group :development do
