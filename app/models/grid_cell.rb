@@ -9,4 +9,11 @@ class GridCell < ActiveRecord::Base
 	def GridCell.total_cells
 		TOTAL_REQUIRED_GRID_CELLS
 	end
+
+	def update_color(color, colored_by)
+		self.color           = color
+		self.last_colored_by = colored_by
+		self.last_colored_at = Time.now
+		self.save
+	end
 end

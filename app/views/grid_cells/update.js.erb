@@ -1,0 +1,5 @@
+<% if flash.now[:error].present? %>
+	$.notify("<%= flash.now[:error] %>", "error");
+<% else %>
+	$("#grid-cell-<%= @grid_cell.id %>").replaceWith("<%= escape_javascript(render 'grid_cell', grid_cell: @grid_cell)%>");
+<% end %>
