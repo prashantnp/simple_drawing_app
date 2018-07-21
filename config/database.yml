@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: simple_drawing_app_development
+
+test:
+  <<: *default
+  database: simple_drawing_app_test
+
+production:
+  <<: *default
+  database: <%= ENV['SIMPLE_DRAWING_APP_DATABASE_NAME'] %>
+  username: <%= ENV['SIMPLE_DRAWING_APP_DATABASE_USERNAME'] %>
+  password: <%= ENV['SIMPLE_DRAWING_APP_DATABASE_PASSWORD'] %>
