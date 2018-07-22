@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
             presence: true,
             format: { with: USER_NAME_REGEX }
 
-
   has_many :grid_cells, foreign_key: :last_colored_by_id, class_name: 'GridCell'
 
 	def self.create_random_user
