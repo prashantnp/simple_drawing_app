@@ -12,4 +12,8 @@ RSpec.describe "routes for Grid Cells", type: :routing do
   it "routes /grid_cells/:id via PUT to grid_cells#update" do
     expect(put("/grid_cells/1")).to route_to('grid_cells#update', id: '1')
   end
+
+  it "routes /grid_cells/refresh grid_cells#refresh" do
+    expect(get("/grid_cells/refresh")).to route_to('grid_cells#refresh')
+  end
 end

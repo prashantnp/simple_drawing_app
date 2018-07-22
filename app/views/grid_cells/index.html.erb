@@ -1,6 +1,14 @@
+<%= render 'instructions' %>
+
 <div class="row">
 	<div class="col-xs-12 col-md-9">
-		<h3>Grid</h3>
+		<div>
+			<%= link_to refresh_grid_cells_path, remote: true, class: "btn btn-default btn-sm pull-right" do %>
+				<i class="glyphicon glyphicon-refresh"></i> Refresh Grid
+			<% end %>
+			<h3>Grid</h3>
+		</div>
+
 		<div id="grid-container" class="grid-container">
 			<%= render @grid_cells %>
 		</div>

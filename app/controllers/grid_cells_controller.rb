@@ -15,6 +15,10 @@ class GridCellsController < ApplicationController
 		end
   end
 
+  def refresh
+  	set_grid_cells
+  end
+
   private
 
   def set_grid_cell

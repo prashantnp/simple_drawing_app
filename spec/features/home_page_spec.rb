@@ -5,6 +5,7 @@ describe 'Home page' do
 		visit root_path
 		random_user = User.first
     expect(page).to have_css('a', text: 'Simple Drawing App')
+    expect(page).to have_css('strong', text: 'Instructions')
     expect(page).to have_css('h3', text: 'Grid')
     expect(page).to have_css('h3', text: 'Color Pallet')
     expect(page).to have_content("Welcome #{random_user.user_name}")
@@ -25,5 +26,12 @@ describe 'Home page' do
 		expect(grid_cell.reload.color).to be_present
 		find("div#grid-cell-#{grid_cell.id}", match: :first).hover
 		expect(page).to have_content('You colored it')
+	end
+
+	it 'has a refresh button which refreshes the grid', js: true do
+		visit root_path
+		click_link('Refresh Grid')
+		wait_for_ajax
+		expect(page).to have_content('Refreshed!')
 	end
 end
