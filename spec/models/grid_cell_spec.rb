@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe GridCell, type: :model do
   describe "Creation" do
-    before(:each) do
-      GridCell.all.update_all(color: nil, last_colored_by_id: nil, last_colored_at: nil)
-    end
-
     it 'is invalid when color is not in hex format' do
       invalid_hex_colors = ['123', '#1234', '#12345g', '@123456', '', ' ']
 

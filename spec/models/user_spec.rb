@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "Creation" do
-    after(:each) do
-      User.destroy_all
-    end
-
     it 'is invalid without a user name or a user name with non word characters' do
       invalid_user_names = [nil, '', ' ', '123', 'user!@#', 'user name']
 

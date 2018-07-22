@@ -5,6 +5,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'capybara/rails'
 
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
@@ -12,4 +14,15 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  config.include WaitForAjax, type: :feature
+
+  config.before(:each) do
+  	User.destroy_all
+    GridCell.all.update_all(color: nil, last_colored_by_id: nil, last_colored_at: nil)
+  end
+
+  config.before(:each, :js => true) do
+  	User.destroy_all
+    GridCell.all.update_all(color: nil, last_colored_by_id: nil, last_colored_at: nil)
+  end
 end

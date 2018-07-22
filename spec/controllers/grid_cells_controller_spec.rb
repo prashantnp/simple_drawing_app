@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe GridCellsController, type: :controller do
-
   describe "GET #index" do
-    it "returns http success" do
+    it "initializes grid cells variable an returns http success" do
       get :index
       expect(assigns(:grid_cells)).not_to be_nil
       expect(response).to have_http_status(:success)

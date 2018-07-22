@@ -1,6 +1,6 @@
 $(function(){
+	// Grid cell starts
 	var gridCells = {};
-	var clipboard = new ClipboardJS('#simple-drawing-clipboard');
 
 	gridCells.updateColor = function(gridCellId) {
 		$.ajax({
@@ -19,14 +19,20 @@ $(function(){
 		} else {
 			$.notify("Please select a color from colorpallet to color this square", "error");
 		}
-	})
+	});
+	// Grid cell ends
+
+	// Clipboard starts
+	var clipboard = new ClipboardJS('#simple-drawing-clipboard');
 
 	clipboard.on('success', function(e) {
 		gridCells.color = e.text;
 	  $.notify('Copied! Click on a square to color it', 'success');
 	  e.clearSelection();
 	});
+	// Clipboard ends
 
+	// Spectrum starts
 	$("#simple-drawing-color-pallet").spectrum({
 	  flat: true,
 	  showInput: true,
@@ -34,5 +40,12 @@ $(function(){
 	});
 	$(".sp-cancel, .sp-choose").remove();
 	$(".sp-input").hide()
-	$(".sp-container").css("z-index", '1');	
+	$(".sp-container").css("z-index", '1');
+	// Spectrum ends
+
+	// Tooltip starts
+	$( document ).tooltip({
+		position: { my: "center bottom", at: "center top" }
+	});
+	// Tooltip ends
 })

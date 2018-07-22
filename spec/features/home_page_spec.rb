@@ -1,11 +1,6 @@
 require 'rails_helper'
 
 describe 'Home page' do
-	before(:each) do
-    User.destroy_all
-    GridCell.all.update_all(color: nil, last_colored_by_id: nil, last_colored_at: nil)
-  end
-
 	it 'is reachable', js: true do
 		visit root_path
 		random_user = User.first
@@ -28,5 +23,7 @@ describe 'Home page' do
 		find("div#grid-cell-#{grid_cell.id}", match: :first).click
 		wait_for_ajax
 		expect(grid_cell.reload.color).to be_present
+		find("div#grid-cell-#{grid_cell.id}", match: :first).hover
+		expect(page).to have_content('You colored it')
 	end
 end

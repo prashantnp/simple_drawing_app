@@ -31,6 +31,6 @@ class GridCellsController < ApplicationController
   end
 
   def set_grid_cells
-  	@grid_cells = GridCell.all
+  	@grid_cells = GridCell.includes(:last_colored_by)
   end
 end
