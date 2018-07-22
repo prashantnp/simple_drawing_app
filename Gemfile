@@ -7,10 +7,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker', '~>1.7.3'
+gem 'passenger', '~>5.3.3'
 
 group :development, :test do
   gem 'byebug'
@@ -18,8 +18,6 @@ group :development, :test do
   gem 'capybara', '2.15.1'
 	gem 'rspec-rails', '3.6.1'
 	gem 'selenium-webdriver', '2.53.0'
-
-	gem 'pry'
 end
 
 group :development do
