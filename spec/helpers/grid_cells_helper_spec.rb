@@ -1,5 +1,4 @@
 require "rails_helper"
-require 'pry'
 
 RSpec.describe GridCellsHelper, type: :helper do
 	before(:each) do
