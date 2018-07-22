@@ -12,7 +12,7 @@
 7. Execute 'bundle exec rspec' to run specs
 8. Execute 'bundle exec rake secret' to generate secret key base. Copy the generated key and export into environment variable SIMPLE_DRAWING_APP_SECRET_KEY_BASE
 9. Execute 'bundle exec rake assets:precompile' to compile asset files
-10 Export MySQL production database name, username and password into environment variables SIMPLE_DRAWING_APP_DATABASE_NAME, SIMPLE_DRAWING_APP_DATABASE_USERNAME, SIMPLE_DRAWING_APP_DATABASE_PASSWORD respectively 
+10. Export MySQL production database name, username and password into environment variables SIMPLE_DRAWING_APP_DATABASE_NAME, SIMPLE_DRAWING_APP_DATABASE_USERNAME, SIMPLE_DRAWING_APP_DATABASE_PASSWORD respectively 
 11. Execute 'bundle exec rake db:setup RAILS_ENV=production' to prepare the production database
 12. Execute 'passenger start --environment production' to start production server at port 3000
 13. Visit http://0.0.0.0:3000/ in a browser (Compatible with latest versions of firefox & chrome as css grid is used)
