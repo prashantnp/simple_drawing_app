@@ -16,3 +16,4 @@
 11. Execute 'bundle exec rake db:setup RAILS_ENV=production' to prepare the production database
 12. Execute 'passenger start --environment production' to start production server at port 3000
 13. Visit http://0.0.0.0:3000/ in a browser (Compatible with latest versions of firefox & chrome as css grid is used)
+14. Done
